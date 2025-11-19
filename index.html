@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Alloy Fort Collins - Real Lasting Results</title>
+        <style>
+            @font-face {
+            font-family: 'United Sans';
+            src: url('UnitedSansSemiCondBlack.otf') format('truetype');
+            font-weight: 900;
+            font-style: normal;
+            }
+            @font-face {
+            font-family: 'United Sans';
+            src: url('UnitedItalicSemiCondBlack.otf') format('truetype');
+            font-weight: 900;
+            font-style: italic;
+            }
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            }
+            body {
+            font-family: 'United Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: #ffffff;
+            overflow-x: hidden;
+            }
+            /* Hero Section */
+            .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(44, 42, 41, 0.5), rgba(44, 42, 41, 0.5)),
+            url('studio-main.JPG') center/cover;
+            background-attachment: fixed;
+            }
+            /* Header */
+            header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: linear-gradient(to bottom, rgba(44,42,41,0.95), transparent);
+            }
+            .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #E1E000;
+            font-family: 'United Sans', sans-serif;
+            }
+            nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+            }
+            nav a:hover {
+            color: #E1E000;
+            }
+            /* Hero Content */
+            .hero-content {
+            max-width: 900px;
+            padding: 2rem;
+            animation: fadeInUp 1s ease-out;
+            }
+            .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+            line-height: 1.1;
+            font-family: 'United Sans', sans-serif;
+            }
+            .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            line-height: 1.6;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            }
+            .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: #E1E000;
+            color: #2C2A29;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            border: 2px solid #E1E000;
+            }
+            .cta-button:hover {
+            background: transparent;
+            color: #E1E000;
+            border-color: #E1E000;
+            }
+            /* Section Styling */
+            section {
+            padding: 6rem 4rem;
+            }
+            .about-section {
+            background: #ffffff;
+            color: #2C2A29;
+            }
+            .gallery-section {
+            background: #2C2A29;
+            color: #ffffff;
+            }
+            .approach-section {
+            background: #A6A8AC;
+            color: #2C2A29;
+            }
+            .studio-showcase {
+            background: #2C2A29;
+            color: #ffffff;
+            padding: 0;
+            position: relative;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            background-image: url('milestone-1.jpg');
+            background-size: cover;
+            background-position: center;
+            }
+            .studio-showcase .content-wrapper {
+            position: relative;
+            z-index: 2;
+            padding: 6rem 4rem;
+            }
+            .studio-showcase::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to right, rgba(44, 42, 41, 0.75), rgba(44, 42, 41, 0.5));
+            z-index: 1;
+            }
+            .community-section {
+            background: #2C2A29;
+            color: #ffffff;
+            }
+            .hours-section {
+            background: #A6A8AC;
+            color: #2C2A29;
+            }
+            .reviews-section {
+            background: #ffffff;
+            color: #2C2A29;
+            }
+            .contact-form-section {
+            background: #2C2A29;
+            color: #ffffff;
+            }
+            .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+            }
+            .form-group {
+            margin-bottom: 1.5rem;
+            }
+            .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 900;
+            font-family: 'United Sans', sans-serif;
+            color: #E1E000;
+            }
+            .form-group input,
+            .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #A6A8AC;
+            background: #ffffff;
+            color: #2C2A29;
+            font-size: 1rem;
+            border-radius: 4px;
+            font-family: 'United Sans', sans-serif;
+            }
+            .form-group input:focus,
+            .form-group textarea:focus {
+            outline: none;
+            border-color: #E1E000;
+            }
+            .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+            }
+            .submit-button {
+            width: 100%;
+            padding: 1.2rem;
+            background: #E1E000;
+            color: #2C2A29;
+            border: none;
+            font-weight: 900;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 1rem;
+            cursor: pointer;
+            font-family: 'United Sans', sans-serif;
+            border-radius: 4px;
+            transition: all 0.3s;
+            }
+            .submit-button:hover {
+            background: #ffffff;
+            color: #2C2A29;
+            }
+            .contact-info {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #A6A8AC;
+            }
+            .contact-info a {
+            color: #E1E000;
+            text-decoration: none;
+            font-weight: 900;
+            }
+            .contact-info a:hover {
+            text-decoration: underline;
+            }
+            .reviews-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            }
+            .reviews-embed {
+            margin-top: 2rem;
+            min-height: 400px;
+            }
+            /* Scrolling Reviews */
+            .reviews-scroll-container {
+            overflow: hidden;
+            margin-top: 3rem;
+            position: relative;
+            }
+            .reviews-track {
+            display: flex;
+            gap: 2rem;
+            animation: scrollReviews 60s linear infinite;
+            width: fit-content;
+            }
+            .reviews-track:hover {
+            animation-play-state: paused;
+            }
+            .review-card {
+            background: #2C2A29;
+            color: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            width: 400px;
+            flex-shrink: 0;
+            border-left: 4px solid #E1E000;
+            text-align: left;
+            position: relative;
+            }
+            .review-stars {
+            color: #E1E000;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            }
+            .review-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+            }
+            .review-author {
+            font-weight: 900;
+            font-family: 'United Sans', sans-serif;
+            color: #E1E000;
+            font-size: 1rem;
+            }
+            @keyframes scrollReviews {
+            0% {
+            transform: translateX(0);
+            }
+            100% {
+            transform: translateX(calc(-400px * 7 - 2rem * 7));
+            }
+            }
+            .content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            }
+            h2 {
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+            text-align: center;
+            font-family: 'United Sans', sans-serif;
+            }
+            .section-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            }
+            /* Scrolling Gallery */
+            .gallery-container {
+            overflow: hidden;
+            margin-top: 3rem;
+            position: relative;
+            }
+            .gallery-track {
+            display: flex;
+            gap: 2rem;
+            animation: scroll 40s linear infinite;
+            width: fit-content;
+            }
+            .gallery-track:hover {
+            animation-play-state: paused;
+            }
+            .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            width: 350px;
+            height: 450px;
+            flex-shrink: 0;
+            background: #1a1a1a;
+            }
+            .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+            }
+            .gallery-item:hover img {
+            transform: scale(1.05);
+            }
+            @keyframes scroll {
+            0% {
+            transform: translateX(0);
+            }
+            100% {
+            transform: translateX(calc(-350px * 9 - 2rem * 9));
+            }
+            }
+            /* Features */
+            .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            }
+            .feature {
+            padding: 2rem;
+            background: rgba(225, 224, 0, 0.1);
+            border-left: 3px solid #E1E000;
+            }
+            .feature h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 900;
+            font-family: 'United Sans', sans-serif;
+            }
+            .feature p {
+            font-size: 1rem;
+            line-height: 1.6;
+            font-weight: 300;
+            }
+            .hours-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+            }
+            .day {
+            padding: 1.5rem;
+            background: #ffffff;
+            text-align: center;
+            border-left: 3px solid #E1E000;
+            }
+            .day-name {
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            color: #2C2A29;
+            font-family: 'United Sans', sans-serif;
+            }
+            .day-hours {
+            font-weight: 300;
+            opacity: 0.8;
+            color: #2C2A29;
+            }
+            /* Footer */
+            footer {
+            background: #2C2A29;
+            color: #ffffff;
+            padding: 4rem 4rem 2rem 4rem;
+            text-align: center;
+            }
+            footer p {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            }
+            /* Scroll Indicator */
+            .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            color: #E1E000;
+            }
+            .scroll-indicator::after {
+            content: '↓';
+            font-size: 2rem;
+            opacity: 0.7;
+            }
+            /* Animations */
+            @keyframes fadeInUp {
+            from {
+            opacity: 0;
+            transform: translateY(30px);
+            }
+            to {
+            opacity: 1;
+            transform: translateY(0);
+            }
+            }
+            @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+            transform: translateX(-50%) translateY(0);
+            }
+            40% {
+            transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+            transform: translateX(-50%) translateY(-5px);
+            }
+            }
+            /* Responsive */
+            @media (max-width: 768px) {
+            header {
+            padding: 1.5rem 2rem;
+            flex-direction: column;
+            gap: 1rem;
+            }
+            nav {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            }
+            nav a {
+            margin-left: 0;
+            }
+            .hero h1 {
+            font-size: 2.5rem;
+            }
+            .hero p {
+            font-size: 1.1rem;
+            }
+            section {
+            padding: 4rem 2rem;
+            }
+            h2 {
+            font-size: 2rem;
+            }
+            .gallery-grid {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <img src="APTFoCoLogo.jpg" alt="Alloy Personal Training Fort Collins" style="height: 60px; width: auto;">
+            </div>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#success">Success Stories</a>
+                <a href="#approach">Our Approach</a>
+                <a href="#hours">Hours</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Real Lasting Results</h1>
+                <p>Fort Collins' premier fitness studio. Helping you understand what you're capable of.</p>
+                <a href="#contact" class="cta-button">Become a Member</a>
+            </div>
+            <div class="scroll-indicator"></div>
+        </section>
+        <!-- About Section -->
+        <section class="about-section" id="about">
+            <div class="content-wrapper">
+                <h2>Welcome to Alloy</h2>
+                <p class="section-text">
+                    Alloy welcomes people no matter where they are in their fitness journey. For decades we have been helping people understand what they are capable of. We are uniquely focused on helping today's adults lead more active and healthier lifestyles.
+                </p>
+            </div>
+        </section>
+        <!-- Success Gallery Section -->
+        <section class="gallery-section" id="success">
+            <div class="content-wrapper">
+                <h2>Member Milestones</h2>
+                <p class="section-text">
+                    Every workout counts. Our members celebrate each milestone on their journey to lasting results.
+                </p>
+                <div class="gallery-container">
+                    <div class="gallery-track">
+                        <div class="gallery-item">
+                            <img src="milestone-3.JPG" alt="Member celebrating 25 workouts">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="milestone-4.jpg" alt="Members celebrating milestones">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="milestone-5.jpg" alt="Member celebrating 25 workouts">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="milestone-6.JPG" alt="Member celebrating 50 workouts">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="milestone-7.jpg" alt="Member celebrating 25 workouts">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="milestone-8.jpg" alt="Member's first workout">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="milestone-9.JPG" alt="Member celebrating 25 workouts">
+                        </div>
+                        <!-- Duplicate set for seamless loop -->
+                        <div class="gallery-item">
+                            <img src="milestone-3.JPG" alt="Member celebrating 25 workouts">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="milestone-4.jpg" alt="Members celebrating milestones">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="milestone-5.jpg" alt="Member celebrating 25 workouts">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="milestone-6.JPG" alt="Member celebrating 50 workouts">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="milestone-7.jpg" alt="Member celebrating 25 workouts">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="milestone-8.jpg" alt="Member's first workout">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="milestone-9.JPG" alt="Member celebrating 25 workouts">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Studio Showcase Section -->
+        <section class="studio-showcase">
+            <div class="content-wrapper">
+                <h2>Your Training Space</h2>
+                <p class="section-text">
+                    Modern equipment, open training floor, and an atmosphere designed to help you focus on getting stronger.
+                </p>
+            </div>
+        </section>
+        <!-- Approach Section -->
+        <section class="approach-section" id="approach">
+            <div class="content-wrapper">
+                <h2>Our Approach</h2>
+                <div class="features">
+                    <div class="feature">
+                        <h3>Proven Formula</h3>
+                        <p>A fitness formula based on tens of thousands of personal training sessions per year.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Strength Training Focus</h3>
+                        <p>Specialized programming centered on building muscle, improving form, and enhancing overall strength.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Expert-Designed</h3>
+                        <p>Programs created by degreed exercise physiologists, doctors of physical therapy, and registered dietitians.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Cutting-Edge Science</h3>
+                        <p>Cutting-edge science combined with real, in-the-trenches experience.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Community Section -->
+        <section class="community-section">
+            <div class="content-wrapper">
+                <h2>Stronger Together</h2>
+                <p class="section-text">
+                    At Alloy, we deliver personal training in small groups—a model backed by research to drive better results. Studies show that small group training significantly improves adherence and outcomes compared to working out alone.
+                </p>
+                <p class="section-text">
+                    Our intimate group setting combines expert coaching with the accountability and motivation of training alongside others. You get personalized attention while benefiting from the energy and commitment of your fellow members.
+                </p>
+            </div>
+        </section>
+        <!-- Hours Section -->
+        <section class="hours-section" id="hours">
+            <div class="content-wrapper">
+                <h2>Studio Hours</h2>
+                <div class="hours-grid">
+                    <div class="day">
+                        <div class="day-name">Monday</div>
+                        <div class="day-hours">5AM - 6:30PM</div>
+                    </div>
+                    <div class="day">
+                        <div class="day-name">Tuesday</div>
+                        <div class="day-hours">7AM - 6:30PM</div>
+                    </div>
+                    <div class="day">
+                        <div class="day-name">Wednesday</div>
+                        <div class="day-hours">5AM - 6:30PM</div>
+                    </div>
+                    <div class="day">
+                        <div class="day-name">Thursday</div>
+                        <div class="day-hours">7AM - 6:30PM</div>
+                    </div>
+                    <div class="day">
+                        <div class="day-name">Friday</div>
+                        <div class="day-hours">5AM - 5:30PM</div>
+                    </div>
+                    <div class="day">
+                        <div class="day-name">Saturday</div>
+                        <div class="day-hours">8AM - 11AM</div>
+                    </div>
+                    <div class="day">
+                        <div class="day-name">Sunday</div>
+                        <div class="day-hours">Closed</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Reviews Section -->
+        <section class="reviews-section">
+            <div class="content-wrapper">
+                <h2>What Our Members Say</h2>
+                <div class="reviews-scroll-container">
+                    <div class="reviews-track">
+                        <div class="review-card">
+                            <div class="review-stars">★★★★★</div>
+                            <p class="review-text">"I've been working out at Alloy for about 5 months. The trainers are knowledgeable, watch your form, and will actually correct you instead of just standing around. The small group setup works well; you get guidance, but still have room to push yourself. The programming changes often enough that it doesn't get boring, and I've seen noticeable gains in strength and mobility. The vibe is supportive without being cheesy or high-pressure."</p>
+                            <div class="review-author">— Adele</div>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-stars">★★★★★</div>
+                            <p class="review-text">"I have been a member since May when they opened. The best thing about this gym is that they CARE. All coaches are great, mixing things up and trying to help each member to reach their best. Also, it is not boring, and I look forward to every session."</p>
+                            <div class="review-author">— Soo</div>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-stars">★★★★★</div>
+                            <p class="review-text">"Trainers are very knowledgeable of body mechanics and movement. They encourage me to push myself to heavier weights. They will adjust my movement to maximize my effort for best results. Small group personal training has created a community I did not expect. We cheer each other on, challenge one another to push themselves and celebrate each other's accomplishments."</p>
+                            <div class="review-author">— Kelly</div>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-stars">★★★★★</div>
+                            <p class="review-text">"The classes are small (capped at 6) and the trainers are friendly and professional. They have been very good at helping me accommodate my needs around injuries as well as just being a beginner to working out in general. This is one gym you don't need to feel intimidated by!"</p>
+                            <div class="review-author">— Liberty</div>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-stars">★★★★★</div>
+                            <p class="review-text">"Alloy is amazing! The team here is stellar. Logan, Gautum, and Paige are professional and well versed with the 55+ crowd as well as the young nimble folks! Just a few weeks in and already feeling stronger!! Yay!"</p>
+                            <div class="review-author">— Tiffany</div>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-stars">★★★★★</div>
+                            <p class="review-text">"I have been at Alloy for a few months now and I can confidently say that they have changed my life significantly. I started my journey with them after some serious health battles left me weaker than I could ever have imagined. I saw huge improvements just after a few weeks. I'm now the strongest I have ever been. Every single staff member is extraordinary. They genuinely care about each and every member and are extremely knowledgeable."</p>
+                            <div class="review-author">— Cheyanne</div>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-stars">★★★★★</div>
+                            <p class="review-text">"They are wonderful!"</p>
+                            <div class="review-author">— Trevor</div>
+                        </div>
+                        <!-- Duplicate set for seamless loop -->
+                        <div class="review-card">
+                            <div class="review-stars">★★★★★</div>
+                            <p class="review-text">"I've been working out at Alloy for about 5 months. The trainers are knowledgeable, watch your form, and will actually correct you instead of just standing around. The small group setup works well; you get guidance, but still have room to push yourself. The programming changes often enough that it doesn't get boring, and I've seen noticeable gains in strength and mobility. The vibe is supportive without being cheesy or high-pressure."</p>
+                            <div class="review-author">— Adele</div>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-stars">★★★★★</div>
+                            <p class="review-text">"I have been a member since May when they opened. The best thing about this gym is that they CARE. All coaches are great, mixing things up and trying to help each member to reach their best. Also, it is not boring, and I look forward to every session."</p>
+                            <div class="review-author">— Soo</div>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-stars">★★★★★</div>
+                            <p class="review-text">"Trainers are very knowledgeable of body mechanics and movement. They encourage me to push myself to heavier weights. They will adjust my movement to maximize my effort for best results. Small group personal training has created a community I did not expect. We cheer each other on, challenge one another to push themselves and celebrate each other's accomplishments."</p>
+                            <div class="review-author">— Kelly</div>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-stars">★★★★★</div>
+                            <p class="review-text">"The classes are small (capped at 6) and the trainers are friendly and professional. They have been very good at helping me accommodate my needs around injuries as well as just being a beginner to working out in general. This is one gym you don't need to feel intimidated by!"</p>
+                            <div class="review-author">— Liberty</div>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-stars">★★★★★</div>
+                            <p class="review-text">"Alloy is amazing! The team here is stellar. Logan, Gautum, and Paige are professional and well versed with the 55+ crowd as well as the young nimble folks! Just a few weeks in and already feeling stronger!! Yay!"</p>
+                            <div class="review-author">— Tiffany</div>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-stars">★★★★★</div>
+                            <p class="review-text">"I have been at Alloy for a few months now and I can confidently say that they have changed my life significantly. I started my journey with them after some serious health battles left me weaker than I could ever have imagined. I saw huge improvements just after a few weeks. I'm now the strongest I have ever been. Every single staff member is extraordinary. They genuinely care about each and every member and are extremely knowledgeable."</p>
+                            <div class="review-author">— Cheyanne</div>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-stars">★★★★★</div>
+                            <p class="review-text">"They are wonderful!"</p>
+                            <div class="review-author">— Trevor</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reviews-embed">
+                    <div style="text-align: center; margin: 2rem 0;">
+                        <a href="https://search.google.com/local/reviews?placeid=ChIJv9U6TdVNaYcRJqGdP4FDmgI"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style="display: inline-block; padding: 1rem 2rem; background: #4285F4; color: white; text-decoration: none; border-radius: 4px; font-weight: 900; font-family: 'United Sans', sans-serif;">
+                    ⭐ Read More Reviews on Google
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Footer -->
+<footer id="contact">
+    <div class="content-wrapper contact-form-section">
+        <h2>Ready to Start?</h2>
+        <p class="section-text" style="margin-bottom: 2rem; color: #ffffff;">Fill out the form below and we'll get back to you within 24 hours.</p>
+        <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="contact">
+            <p style="display: none;">
+                <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+            </p>
+            <div class="form-group">
+                <label for="name">Name *</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+            <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" required placeholder="Tell us about your fitness goals..."></textarea>
+            </div>
+            <button type="submit" class="submit-button">Send Message</button>
+        </form>
+        <div class="contact-info">
+            <p style="margin-bottom: 1rem; font-size: 1.1rem;">Or reach us directly:</p>
+            <p style="margin-bottom: 0.5rem;"><a href="mailto:info.foco@alloypersonaltraining.com">info.foco@alloypersonaltraining.com</a></p>
+            <p style="margin-bottom: 0.5rem;"><a href="tel:970-802-5700">(970) 802-5700</a></p>
+            <p style="margin-bottom: 0.5rem;">1526 E Harmony Road<br>Fort Collins, CO 80525</p>
+        </div>
+        <p style="margin-top: 4rem; opacity: 0.7;">© 2024 Alloy Fort Collins. All rights reserved.</p>
