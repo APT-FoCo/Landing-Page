@@ -159,6 +159,116 @@
             background: linear-gradient(to right, rgba(44, 42, 41, 0.75), rgba(44, 42, 41, 0.5));
             z-index: 1;
             }
+            /* Trainers Section */
+            .trainers-section {
+            background: #ffffff;
+            color: #2C2A29;
+            padding: 6rem 0;
+            overflow: hidden;
+            }
+            .trainers-section .content-wrapper {
+            padding: 0 4rem;
+            }
+            .trainers-section h2,
+            .trainers-section .section-text {
+            padding: 0;
+            margin-bottom: 2rem;
+            }
+            .trainers-grid {
+            display: flex;
+            gap: 2rem;
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding: 1rem 0 2rem 0;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            scrollbar-color: #E1E000 #f0f0f0;
+            }
+            .trainers-grid::-webkit-scrollbar {
+            height: 8px;
+            }
+            .trainers-grid::-webkit-scrollbar-track {
+            background: #f0f0f0;
+            border-radius: 10px;
+            }
+            .trainers-grid::-webkit-scrollbar-thumb {
+            background: #E1E000;
+            border-radius: 10px;
+            }
+            .trainers-grid::-webkit-scrollbar-thumb:hover {
+            background: #c5c400;
+            }
+            .trainer-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            min-width: 320px;
+            width: 320px;
+            height: 450px;
+            flex-shrink: 0;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            }
+            .trainer-card:hover {
+            transform: translateY(-5px);
+            }
+            .trainer-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            }
+            .trainer-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(225, 224, 0, 0.95);
+            color: #2C2A29;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            overflow-y: auto;
+            }
+            .trainer-card:hover .trainer-overlay {
+            opacity: 1;
+            }
+            .trainer-name-badge {
+            position: absolute;
+            bottom: 1rem;
+            left: 1rem;
+            right: 1rem;
+            background: rgba(225, 224, 0, 0.95);
+            color: #2C2A29;
+            padding: 1rem;
+            border-radius: 4px;
+            font-weight: 900;
+            font-size: 1.2rem;
+            text-align: center;
+            pointer-events: none;
+            }
+            .trainer-overlay h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+            color: #2C2A29;
+            }
+            .trainer-overlay p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            font-size: 0.95rem;
+            }
+            .trainer-overlay strong {
+            display: block;
+            margin-top: 1rem;
+            margin-bottom: 0.3rem;
+            font-weight: 900;
+            }
             .community-section {
             background: #2C2A29;
             color: #ffffff;
@@ -501,6 +611,24 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1.5rem;
             }
+            .trainers-section {
+            padding: 4rem 0;
+            }
+            .trainers-section .content-wrapper {
+            padding: 0 2rem;
+            }
+            .trainers-grid {
+            gap: 1.5rem;
+            }
+            .trainer-card {
+            min-width: 280px;
+            width: 280px;
+            height: 400px;
+            }
+            .trainer-overlay {
+            padding: 1.5rem;
+            font-size: 0.9rem;
+            }
         </style>
     </head>
     <body>
@@ -512,6 +640,7 @@
             <nav>
                 <a href="#about">About</a>
                 <a href="#success">Success Stories</a>
+                <a href="#trainers">Trainers</a>
                 <a href="#approach">Our Approach</a>
                 <a href="#hours">Hours</a>
                 <a href="#contact">Contact</a>
@@ -598,6 +727,63 @@
                 <p class="section-text">
                     Modern equipment, open training floor, and an atmosphere designed to help you focus on getting stronger.
                 </p>
+            </div>
+        </section>
+        <!-- Trainers Section -->
+        <section class="trainers-section" id="trainers">
+            <div class="content-wrapper">
+                <h2>Your Trainers</h2>
+                <p class="section-text">Meet the dedicated coaches who will guide you on your fitness journey. Hover over each photo to learn more about them!</p>
+                <div class="trainers-grid">
+                    <!-- Paige -->
+                    <div class="trainer-card">
+                        <img src="paige.jpg" alt="Paige - Head Coach" class="trainer-image">
+                        <div class="trainer-name-badge">Paige - Head Coach</div>
+                        <div class="trainer-overlay">
+                            <h3>Say hello to Paige, your Head Coach! 🙌</h3>
+                            <p><strong>Where are you from?</strong> The Windy City, Chicago, IL!</p>
+                            <p><strong>What do you love about fitness?</strong> I love pushing my limits, proving to myself that I can do hard things 💪</p>
+                            <p><strong>What do you do for fun?</strong> I love going outside to hike, swim, and snowboard, spending time with my friends and family, and trying new coffee shops!</p>
+                            <p style="margin-top: 1.5rem; font-style: italic;">You'll see Paige quite a bit in the studio, she can't wait to meet you! 😊</p>
+                        </div>
+                    </div>
+                    <!-- Logan -->
+                    <div class="trainer-card">
+                        <img src="logan.jpg" alt="Logan - Director of Training" class="trainer-image">
+                        <div class="trainer-name-badge">Logan - Director of Training</div>
+                        <div class="trainer-overlay">
+                            <h3>Meet Logan, our Director of Training! 🎉</h3>
+                            <p><strong>Where are you from?</strong> Northern Colorado, currently in Greeley</p>
+                            <p><strong>What do you love about fitness?</strong> The process of self improvement and constant challenge/growth!</p>
+                            <p><strong>What is your favorite thing to eat after a workout?</strong> Healthy burrito bowl with loads of protein.</p>
+                            <p><strong>What do you do for fun?</strong> Enjoy cooking a delicious meal and watching a good movie.</p>
+                            <p style="margin-top: 1.5rem; font-style: italic;">You'll spot him around the studio — don't forget to say hello! 🙌</p>
+                        </div>
+                    </div>
+                    <!-- Gautum -->
+                    <div class="trainer-card">
+                        <img src="gautum.jpg" alt="Coach Gautum" class="trainer-image">
+                        <div class="trainer-name-badge">Coach Gautum</div>
+                        <div class="trainer-overlay">
+                            <h3>Meet Coach Gautum!</h3>
+                            <p><strong>Where are you from?</strong> I grew up in Portland, OR, did undergrad in Los Angeles, CA and did grad school in State College, PA</p>
+                            <p><strong>What is your favorite thing about fitness?</strong> I love the independence and confidence fitness can give people. There's something deeply satisfying about feeling strong and it touches every aspect of life.</p>
+                            <p><strong>What do you like to do for fun?</strong> I love hiking with my wife, playing with my pets and am a huge movie junkie. Also, of course, I love lifting weights!</p>
+                        </div>
+                    </div>
+                    <!-- Rachelle -->
+                    <div class="trainer-card">
+                        <img src="rachelle.jpg" alt="Coach Rachelle" class="trainer-image">
+                        <div class="trainer-name-badge">Coach Rachelle</div>
+                        <div class="trainer-overlay">
+                            <h3>Meet Coach Rachelle!</h3>
+                            <p><strong>Where are you from?</strong> Conifer, Colorado</p>
+                            <p><strong>What is your favorite thing about fitness?</strong> What I love most about fitness and coaching is connecting with people and helping them navigate the challenges that keep them stuck. I get to be a problem solver, support their mindset, and help them rediscover joy in movement so they can feel good living the life they love.</p>
+                            <p><strong>What do you like to do for fun?</strong> I know being from Colorado means I'm supposed to be outdoorsy, but the truth is I'm more into workouts, home projects, cheering on my kids, listening to podcasts and slow walks with my husband.</p>
+                            <p style="margin-top: 1.5rem; font-style: italic;">Make sure you say hello to her when you see her in the studio!</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         <!-- Approach Section -->
