@@ -413,6 +413,54 @@
             transform: translateX(calc(-400px * 7 - 2rem * 7));
             }
             }
+            /* Success Stories Section */
+            .success-stories-section {
+            background: #A6A8AC;
+            color: #2C2A29;
+            padding: 4rem 4rem;
+            }
+            .success-stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            }
+            .success-story-card {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            border: 3px solid transparent;
+            }
+            .success-story-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+            border-color: #E1E000;
+            }
+            .success-story-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            }
+            .success-story-card h3 {
+            font-size: 1.3rem;
+            font-weight: 900;
+            color: #2C2A29;
+            margin-bottom: 0.5rem;
+            font-family: 'United Sans', sans-serif;
+            }
+            .success-story-card p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.5rem;
+            }
             .content-wrapper {
             max-width: 1200px;
             margin: 0 auto;
@@ -628,6 +676,13 @@
             .trainer-overlay {
             padding: 1.5rem;
             font-size: 0.9rem;
+            }
+            .success-stories-section {
+            padding: 4rem 2rem;
+            }
+            .success-stories-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
             }
         </style>
     </head>
@@ -949,6 +1004,37 @@
         </div>
     </div>
 </section>
+
+<!-- Client Success Stories Section -->
+<section class="success-stories-section">
+    <div class="content-wrapper">
+        <h2>Client Success Stories</h2>
+        <p class="section-text" style="text-align: center; margin-bottom: 3rem;">Read about the incredible transformations our members have achieved!</p>
+        <div class="success-stories-grid">
+            <a href="SuccessStory Joanne Skene.pdf" target="_blank" class="success-story-card">
+                <div class="success-story-icon">📄</div>
+                <h3>Joanne Skene</h3>
+                <p>Click to read her story</p>
+            </a>
+            <a href="SuccessStory Kathleen Mulica.pdf" target="_blank" class="success-story-card">
+                <div class="success-story-icon">📄</div>
+                <h3>Kathleen Mulica</h3>
+                <p>Click to read her story</p>
+            </a>
+            <a href="SuccessStory Cheyanne Martin.png" target="_blank" class="success-story-card">
+                <div class="success-story-icon">🖼️</div>
+                <h3>Cheyanne Martin</h3>
+                <p>Click to read her story</p>
+            </a>
+            <a href="SuccessStory Cathy Cole.pdf" target="_blank" class="success-story-card">
+                <div class="success-story-icon">📄</div>
+                <h3>Cathy Cole</h3>
+                <p>Click to read her story</p>
+            </a>
+        </div>
+    </div>
+</section>
+
 <!-- Footer -->
 <footer id="contact">
     <div class="content-wrapper contact-form-section">
@@ -956,10 +1042,24 @@
         <p class="section-text" style="margin-bottom: 2rem; color: #ffffff;">Fill out the form below and we'll get back to you within 24 hours.</p>
         
         <!-- Success Message (hidden by default) -->
-        <div id="form-success" style="display: none; background: #E1E000; color: #2C2A29; padding: 2rem; border-radius: 8px; margin-bottom: 2rem; text-align: center;">
-            <h3 style="margin-bottom: 1rem; font-size: 1.8rem;">Thank You! 🎉</h3>
-            <p style="font-size: 1.1rem; margin-bottom: 0.5rem;">We've received your message and will get back to you within 24 hours.</p>
-            <p style="font-size: 1rem;">We're excited to help you on your fitness journey!</p>
+        <div id="form-success" style="display: none; background: #E1E000; color: #2C2A29; padding: 2.5rem; border-radius: 8px; margin-bottom: 2rem; text-align: center;">
+            <h3 style="margin-bottom: 1.5rem; font-size: 2rem; font-weight: 900;">Thank You! 🎉</h3>
+            <p style="font-size: 1.2rem; margin-bottom: 1.5rem; font-weight: 600;">We've received your message!</p>
+            
+            <div style="text-align: left; max-width: 600px; margin: 0 auto; background: rgba(255,255,255,0.3); padding: 1.5rem; border-radius: 6px;">
+                <p style="font-size: 1rem; margin-bottom: 1rem; font-weight: 600;">Here's what happens next:</p>
+                <p style="font-size: 1rem; margin-bottom: 1rem; line-height: 1.6;">
+                    <strong>Step 1:</strong> A member of our team will reach out within 24 hours for a quick call.
+                </p>
+                <p style="font-size: 1rem; margin-bottom: 1rem; line-height: 1.6;">
+                    <strong>Step 2:</strong> We'll learn about your background and schedule a complimentary one-hour <strong>"Starting Point Session"</strong> where you'll see the studio and complete an initial assessment.
+                </p>
+                <p style="font-size: 1rem; margin-bottom: 0; line-height: 1.6;">
+                    <strong>Step 3:</strong> No obligation to join—just a chance to experience the Alloy difference!
+                </p>
+            </div>
+            
+            <p style="font-size: 1rem; margin-top: 1.5rem; font-style: italic;">We're excited to help you on your fitness journey!</p>
         </div>
         
         <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
