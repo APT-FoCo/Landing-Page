@@ -414,10 +414,18 @@
             }
             }
             /* Success Stories Section */
-            .success-stories-section {
-            background: #A6A8AC;
+            .success-stories-subsection {
+            margin-top: 5rem;
+            padding-top: 4rem;
+            border-top: 2px solid #E1E000;
+            }
+            .success-stories-subsection h3 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+            text-align: center;
+            font-family: 'United Sans', sans-serif;
             color: #2C2A29;
-            padding: 4rem 4rem;
             }
             .success-stories-grid {
             display: grid;
@@ -429,9 +437,9 @@
             margin-right: auto;
             }
             .success-story-card {
-            background: #ffffff;
+            background: #f9f9f9;
             border-radius: 8px;
-            padding: 2rem;
+            overflow: hidden;
             text-align: center;
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -445,11 +453,17 @@
             box-shadow: 0 8px 30px rgba(0,0,0,0.15);
             border-color: #E1E000;
             }
-            .success-story-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            .success-story-thumbnail {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            background: #e0e0e0;
+            display: block;
             }
-            .success-story-card h3 {
+            .success-story-content {
+            padding: 1.5rem;
+            }
+            .success-story-card h4 {
             font-size: 1.3rem;
             font-weight: 900;
             color: #2C2A29;
@@ -677,8 +691,12 @@
             padding: 1.5rem;
             font-size: 0.9rem;
             }
-            .success-stories-section {
-            padding: 4rem 2rem;
+            .success-stories-subsection {
+            margin-top: 3rem;
+            padding-top: 3rem;
+            }
+            .success-stories-subsection h3 {
+            font-size: 2rem;
             }
             .success-stories-grid {
             grid-template-columns: 1fr;
@@ -1002,35 +1020,41 @@
                 </a>
             </div>
         </div>
-    </div>
-</section>
-
-<!-- Client Success Stories Section -->
-<section class="success-stories-section">
-    <div class="content-wrapper">
-        <h2>Client Success Stories</h2>
-        <p class="section-text" style="text-align: center; margin-bottom: 3rem;">Read about the incredible transformations our members have achieved!</p>
-        <div class="success-stories-grid">
-            <a href="SuccessStory Joanne Skene.pdf" target="_blank" class="success-story-card">
-                <div class="success-story-icon">📄</div>
-                <h3>Joanne Skene</h3>
-                <p>Click to read her story</p>
-            </a>
-            <a href="SuccessStory Kathleen Mulica.pdf" target="_blank" class="success-story-card">
-                <div class="success-story-icon">📄</div>
-                <h3>Kathleen Mulica</h3>
-                <p>Click to read her story</p>
-            </a>
-            <a href="SuccessStory Cheyanne Martin.png" target="_blank" class="success-story-card">
-                <div class="success-story-icon">🖼️</div>
-                <h3>Cheyanne Martin</h3>
-                <p>Click to read her story</p>
-            </a>
-            <a href="SuccessStory Cathy Cole.pdf" target="_blank" class="success-story-card">
-                <div class="success-story-icon">📄</div>
-                <h3>Cathy Cole</h3>
-                <p>Click to read her story</p>
-            </a>
+        
+        <!-- Client Success Stories Subsection -->
+        <div class="success-stories-subsection">
+            <h3>Client Success Stories</h3>
+            <p class="section-text" style="text-align: center; margin-bottom: 3rem;">Read about the incredible transformations our members have achieved!</p>
+            <div class="success-stories-grid">
+                <a href="SuccessStory Joanne Skene.pdf" target="_blank" class="success-story-card">
+                    <img src="joanne-skene-thumbnail.jpg" alt="Joanne Skene Success Story" class="success-story-thumbnail">
+                    <div class="success-story-content">
+                        <h4>Joanne Skene</h4>
+                        <p>Click to read her story</p>
+                    </div>
+                </a>
+                <a href="SuccessStory Kathleen Mulica.pdf" target="_blank" class="success-story-card">
+                    <img src="kathleen-mulica-thumbnail.jpg" alt="Kathleen Mulica Success Story" class="success-story-thumbnail">
+                    <div class="success-story-content">
+                        <h4>Kathleen Mulica</h4>
+                        <p>Click to read her story</p>
+                    </div>
+                </a>
+                <a href="SuccessStory Cheyanne Martin.png" target="_blank" class="success-story-card">
+                    <img src="cheyanne-martin-thumbnail.jpg" alt="Cheyanne Martin Success Story" class="success-story-thumbnail">
+                    <div class="success-story-content">
+                        <h4>Cheyanne Martin</h4>
+                        <p>Click to read her story</p>
+                    </div>
+                </a>
+                <a href="SuccessStory Cathy Cole.pdf" target="_blank" class="success-story-card">
+                    <img src="cathy-cole-thumbnail.jpg" alt="Cathy Cole Success Story" class="success-story-thumbnail">
+                    <div class="success-story-content">
+                        <h4>Cathy Cole</h4>
+                        <p>Click to read her story</p>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
 </section>
