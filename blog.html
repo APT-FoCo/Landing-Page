@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Alloy Fort Collins</title>
+    <style>
+        @font-face {
+            font-family: 'United Sans';
+            src: url('UnitedSansSemiCondBlack.otf') format('truetype');
+            font-weight: 900;
+            font-style: normal;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'United Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: #2C2A29;
+            line-height: 1.6;
+            background: #ffffff;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: #2C2A29;
+        }
+        .logo img {
+            height: 80px;
+            width: auto;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #E1E000;
+        }
+        .blog-hero {
+            background: #2C2A29;
+            color: #ffffff;
+            padding: 8rem 4rem 4rem;
+            text-align: center;
+        }
+        .blog-hero h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+        .blog-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        .blog-list {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        .blog-card {
+            display: block;
+            background: #ffffff;
+            border: 2px solid #A6A8AC;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            text-decoration: none;
+            color: #2C2A29;
+            transition: all 0.3s;
+        }
+        .blog-card:hover {
+            border-color: #E1E000;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .blog-card h2 {
+            font-size: 1.4rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            color: #2C2A29;
+        }
+        .blog-card .date {
+            color: #E1E000;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        .blog-card .excerpt {
+            color: #656D78;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        .back-home {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #E1E000;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        .back-home:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background: #2C2A29;
+            color: #ffffff;
+            text-align: center;
+            padding: 2rem;
+        }
+        footer a {
+            color: #E1E000;
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem 1.5rem;
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .logo img {
+                height: 60px;
+            }
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.5rem;
+            }
+            nav a {
+                margin-left: 0.5rem;
+                margin-right: 0.5rem;
+                font-size: 0.85rem;
+            }
+            .blog-hero {
+                padding: 7rem 1.5rem 3rem;
+            }
+            .blog-hero h1 {
+                font-size: 2rem;
+            }
+            .blog-list {
+                padding: 2rem 1.5rem;
+            }
+            .blog-card {
+                padding: 1.5rem;
+            }
+            .blog-card h2 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="APTFoCoLogo.jpg" alt="Alloy Personal Training Fort Collins"></a>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="blog.html">Blog</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+    </header>
+    
+    <div class="blog-hero">
+        <h1>Blog</h1>
+        <p>Tips, stories, and insights for living stronger</p>
+    </div>
+    
+    <div class="blog-list">
+        <a href="index.html" class="back-home">← Back to Home</a>
+        <a href="blog-even-more-reasons-to-lift-weights-after-40.html" class="blog-card">
+            <h2>Even More Reasons to Lift Weights after 40</h2>
+            <div class="date">November 20, 2025</div>
+            <p class="excerpt">Even More Reasons to Lift Weights after 40 Sometimes we like to share a few of the countless reasons why people over 40 should strength train...</p>
+        </a>
+        <a href="blog-how-to-stay-on-track-over-the-long-holiday-season.html" class="blog-card">
+            <h2>How to Stay on Track over the Long Holiday Season</h2>
+            <div class="date">November 18, 2025</div>
+            <p class="excerpt">Fall Party Fun! Fall Party — Saturday, November 22 | 11:30 AM – 1:30 PM Location: Alloy Studio Food, fun, and fellowship to celebrate the end of the...</p>
+        </a>
+        <a href="blog-how-functional-fitness-strengthens-your-real-life.html" class="blog-card">
+            <h2>How Functional Fitness Strengthens Your Real Life</h2>
+            <div class="date">November 13, 2025</div>
+            <p class="excerpt">Pickleball and Our Fall Party: Lots of Fun Planned! Pickleball Mixer — Sunday, November 16 | 10:00 AM – 12:00 PM Location: The Picklr Fort Collins,...</p>
+        </a>
+        <a href="blog-alloy-success-story-this-place-was-built-for-me.html" class="blog-card">
+            <h2>Alloy Success Story: This Place Was Built for Me</h2>
+            <div class="date">November 06, 2025</div>
+            <p class="excerpt">At 67, Glenn Diamond has spent a lifetime producing sports for others, from Major League Baseball to the WNBA. But this year, he decided it was time...</p>
+        </a>
+        <a href="blog-member-of-the-month-stronger-happier-healthier.html" class="blog-card">
+            <h2>Member of the Month: &#x27;Stronger, Happier, Healthier&#x27;</h2>
+            <div class="date">November 04, 2025</div>
+            <p class="excerpt">Congratulations to Our Member of the Month, Kathleen Mulica As the primary caregiver for my husband, who lives with Parkinson’s Disease, I’ve...</p>
+        </a>
+        <a href="blog-no-bones-about-it-you-can-build-a-stronger-skeleto.html" class="blog-card">
+            <h2>No Bones about It: You Can Build a Stronger Skeleton</h2>
+            <div class="date">October 30, 2025</div>
+            <p class="excerpt">Breaking a bone is one of the top fears of people over 40. But we can build stronger bodies, including stronger bones, through regular exercise,...</p>
+        </a>
+        <a href="blog-a-new-era-for-women-in-midlife.html" class="blog-card">
+            <h2>A New Era for Women in Midlife</h2>
+            <div class="date">October 28, 2025</div>
+            <p class="excerpt">For generations, menopause was whispered about, joked about, or ignored altogether. That’s changing fast. Today’s women are talking about more than...</p>
+        </a>
+        <a href="blog-grow-stronger-healthier-happier.html" class="blog-card">
+            <h2>Grow Stronger, Healthier &amp; Happier</h2>
+            <div class="date">October 23, 2025</div>
+            <p class="excerpt">Overcoming &#x27;Nonsense&#x27; about Aging to Grow Stronger, Healthier and Happier For years, Roya Ghazanfar, 59, tried everything to stay in shape — Peloton,...</p>
+        </a>
+    </div>
+    
+    <footer>
+        <p>© 2024 Alloy Fort Collins. All rights reserved.</p>
+        <p><a href="index.html#contact">Contact Us</a> | <a href="tel:970-802-5700">(970) 802-5700</a></p>
+    </footer>
+</body>
+</html>
