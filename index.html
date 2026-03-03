@@ -1094,7 +1094,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- Footer -->
 <footer id="contact">
     <div class="content-wrapper contact-form-section">
-        <h2>Ready to Start?</h2>
+        <h2>Ready to Get in Touch?</h2>
         <p class="section-text" style="margin-bottom: 2rem; color: #ffffff;">Fill out the form below and we'll get back to you within 24 hours.</p>
         
         <!-- Success Message (hidden by default) -->
@@ -1165,11 +1165,11 @@ function showSuccess() {
     }
 }
 
-// Method 1: postMessage from GHL iframe
+// Method 1: postMessage from GHL iframe — watching for ALLOY_FORM_SUCCESS signal
 window.addEventListener('message', function(event) {
     if (!event.data) return;
     const data = typeof event.data === 'string' ? event.data : JSON.stringify(event.data);
-    if (data.includes('form_submitted') || data.includes('formSubmitted') || data.includes('submissionId')) {
+    if (data.includes('ALLOY_FORM_SUCCESS') || data.includes('form_submitted') || data.includes('formSubmitted') || data.includes('submissionId')) {
         showSuccess();
     }
 });
