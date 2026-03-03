@@ -1119,13 +1119,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </div>
         
         <!-- GHL Form Embed -->
-        <div id="ghl-form-wrapper" style="width:100%; max-width: 700px; margin: 0 auto;">
+        <div id="ghl-form-wrapper" style="width:100%; max-width: 700px; margin: 0 auto; min-height: 645px;">
             <iframe
-                src="https://alloy.training/widget/form/kBEzFw4ZlH7PJmHAClaa"
-                style="width:100%;height:520px;border:none;border-radius:3px;display:block;"
-                id="inline-kBEzFw4ZlH7PJmHAClaa"
-                title="Contact Form"
+                src="https://alloy.training/widget/form/kXBm4Xvj19am6Fl8ExxY"
+                style="width:100%;height:645px;border:none;border-radius:3px;display:block;"
+                id="inline-kXBm4Xvj19am6Fl8ExxY"
+                data-layout="{'id':'INLINE'}"
+                data-trigger-type="alwaysShow"
+                data-trigger-value=""
+                data-activation-type="alwaysActivated"
+                data-activation-value=""
+                data-deactivation-type="neverDeactivate"
+                data-deactivation-value=""
+                data-form-name="Alloy FoCo Landing Page"
+                data-height="645"
+                data-layout-iframe-id="inline-kXBm4Xvj19am6Fl8ExxY"
+                data-form-id="kXBm4Xvj19am6Fl8ExxY"
+                title="Alloy FoCo Landing Page"
             ></iframe>
+            <script src="https://alloy.training/js/form_embed.js"></script>
         </div>
         <div class="contact-info">
             <p style="margin-bottom: 1rem; font-size: 1.1rem;">Or reach us directly:</p>
@@ -1171,7 +1183,7 @@ if (urlParams.get('submitted') === 'true') {
 // Method 3: Watch iframe height — GHL's form_embed.js resizes the iframe dynamically.
 // After submission it collapses to show the thank-you message (much shorter height).
 window.addEventListener('load', function() {
-    const iframe = document.getElementById('inline-kBEzFw4ZlH7PJmHAClaa');
+    const iframe = document.getElementById('inline-kXBm4Xvj19am6Fl8ExxY');
     if (!iframe) return;
 
     let formInteracted = false;
