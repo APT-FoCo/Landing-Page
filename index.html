@@ -1122,7 +1122,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <div id="ghl-form-wrapper" style="width:100%; max-width: 700px; margin: 0 auto;">
             <iframe
                 src="https://alloy.training/widget/form/kBEzFw4ZlH7PJmHAClaa"
-                style="width:100%;height:480px;border:none;border-radius:3px"
+                style="width:100%;height:600px;min-height:600px;border:none;border-radius:3px;display:block;"
                 id="inline-kBEzFw4ZlH7PJmHAClaa"
                 data-layout="{'id':'INLINE'}"
                 data-trigger-type="alwaysShow"
@@ -1155,37 +1155,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 const successMessage = document.getElementById('form-success');
 const ghlFormWrapper = document.getElementById('ghl-form-wrapper');
 
-window.addEventListener('message', function(event) {
-    // GHL fires a message event when the form is submitted successfully
-    if (event.data && (
-        event.data.type === 'form_submitted' ||
-        event.data.type === 'gtm.formSubmit' ||
-        (typeof event.data === 'string' && event.data.includes('form_submitted'))
-    )) {
-        // Hide the form, show success message
-        ghlFormWrapper.style.display = 'none';
-        successMessage.style.display = 'block';
-        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
-});
-
-// Fallback: also listen for the hl-form-submitted event GHL sometimes uses
-document.addEventListener('hl-form-submitted', function() {
-    ghlFormWrapper.style.display = 'none';
-    successMessage.style.display = 'block';
-    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-});
-
-// Note: if postMessage detection doesn't fire in production,
-// the GHL form's own built-in thank you message will still show inside the iframe.
-// To guarantee the custom message shows, set a redirect URL in GHL form settings
-// pointing back to https://alloyfortcollins.com/#contact?submitted=true
-// and add this check:
-const urlParams = new URLSearchParams(window.location.search);
-if (urlParams.get('submitted') === 'true') {
+function showSuccess() {
     if (ghlFormWrapper) ghlFormWrapper.style.display = 'none';
     if (successMessage) {
         successMessage.style.display = 'block';
         successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
+}
+
+window.addEventListener('message', function(event) {
+    if (!event.data) return;
+    const data = typeof event.data === 'string' ? event.data : JSON.stringify(event.data);
+    // GHL fires various message types on submission
+    if (
+        data.includes('form_submitted') ||
+        data.includes('formSubmitted') ||
+        data.includes('Thank you') ||
+        data.includes('gtm.formSubmit')
+    ) {
+        showSuccess();
+    }
+});
+
+// Fallback: GHL custom event
+document.addEventListener('hl-form-submitted', showSuccess);
+
+// Most reliable fallback: redirect URL parameter
+const urlParams = new URLSearchParams(window.location.search);
+if (urlParams.get('submitted') === 'true') {
+    showSuccess();
 }
