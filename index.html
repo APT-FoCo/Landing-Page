@@ -1118,37 +1118,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <p style="font-size: 1rem; margin-top: 1.5rem; font-style: italic;">We're excited to help you on your fitness journey!</p>
         </div>
         
-        <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-            <!-- Web3Forms Access Key -->
-            <input type="hidden" name="access_key" value="0c9e29c1-3af1-4319-9b9e-2cd1fecaaf1a">
-            
-            <!-- Honeypot Spam Protection -->
-            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-            
-            <!-- Custom Subject Line -->
-            <input type="hidden" name="subject" value="New Lead from Alloy Fort Collins Website">
-            
-            <!-- Redirect to thank you (optional - we're using JS instead) -->
-            <input type="hidden" name="redirect" value="https://alloyfortcollins.com/#contact">
-            
-            <div class="form-group">
-                <label for="name">Name *</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email *</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="phone">Phone</label>
-                <input type="tel" id="phone" name="phone">
-            </div>
-            <div class="form-group">
-                <label for="message">Message *</label>
-                <textarea id="message" name="message" required placeholder="Tell us about your fitness goals..."></textarea>
-            </div>
-            <button type="submit" class="submit-button" id="submit-btn">Send Message</button>
-        </form>
+        <!-- GHL Form Embed -->
+        <div id="ghl-form-wrapper" style="width:100%; max-width: 700px; margin: 0 auto;">
+            <iframe
+                src="https://alloy.training/widget/form/kBEzFw4ZlH7PJmHAClaa"
+                style="width:100%;height:480px;border:none;border-radius:3px"
+                id="inline-kBEzFw4ZlH7PJmHAClaa"
+                data-layout="{'id':'INLINE'}"
+                data-trigger-type="alwaysShow"
+                data-trigger-value=""
+                data-activation-type="alwaysActivated"
+                data-activation-value=""
+                data-deactivation-type="neverDeactivate"
+                data-deactivation-value=""
+                data-form-name="Founder Membership LP Form"
+                data-height="480"
+                data-layout-iframe-id="inline-kBEzFw4ZlH7PJmHAClaa"
+                data-form-id="kBEzFw4ZlH7PJmHAClaa"
+                title="Founder Membership LP Form"
+            ></iframe>
+            <script src="https://alloy.training/js/form_embed.js"></script>
+        </div>
         <div class="contact-info">
             <p style="margin-bottom: 1rem; font-size: 1.1rem;">Or reach us directly:</p>
             <p style="margin-bottom: 0.5rem;"><a href="/cdn-cgi/l/email-protection#a3cacdc5cc8dc5ccc0cce3c2cfcfccdad3c6d1d0cccdc2cfd7d1c2cacdcacdc48dc0ccce"><span class="__cf_email__" data-cfemail="533a3d353c7d353c303c13323f3f3c2a233621203c3d323f2721323a3d3a3d347d303c3e">[email&#160;protected]</span></a></p>
@@ -1161,41 +1151,41 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script>
-// Handle form submission
-const form = document.getElementById('contact-form');
-const submitBtn = document.getElementById('submit-btn');
+// Handle GHL form submission via postMessage
 const successMessage = document.getElementById('form-success');
+const ghlFormWrapper = document.getElementById('ghl-form-wrapper');
 
-form.addEventListener('submit', async function(e) {
-    e.preventDefault();
-    
-    // Disable submit button
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Sending...';
-    
-    // Get form data
-    const formData = new FormData(form);
-    
-    try {
-        // Submit to Web3Forms
-        const response = await fetch('https://api.web3forms.com/submit', {
-            method: 'POST',
-            body: formData
-        });
-        
-        const data = await response.json();
-        
-        if (data.success) {
-            // Show success message
-            successMessage.style.display = 'block';
-            form.style.display = 'none';
-            
-            // Scroll to success message
-            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            
-            // Reset form
-            form.reset();
-        } else {
-            alert('Oops! Something went wrong. Please try again or call us directly at (970) 802-5700');
-            submitBtn.disabled = false;
-            submitBtn.textConte
+window.addEventListener('message', function(event) {
+    // GHL fires a message event when the form is submitted successfully
+    if (event.data && (
+        event.data.type === 'form_submitted' ||
+        event.data.type === 'gtm.formSubmit' ||
+        (typeof event.data === 'string' && event.data.includes('form_submitted'))
+    )) {
+        // Hide the form, show success message
+        ghlFormWrapper.style.display = 'none';
+        successMessage.style.display = 'block';
+        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+});
+
+// Fallback: also listen for the hl-form-submitted event GHL sometimes uses
+document.addEventListener('hl-form-submitted', function() {
+    ghlFormWrapper.style.display = 'none';
+    successMessage.style.display = 'block';
+    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+});
+
+// Note: if postMessage detection doesn't fire in production,
+// the GHL form's own built-in thank you message will still show inside the iframe.
+// To guarantee the custom message shows, set a redirect URL in GHL form settings
+// pointing back to https://alloyfortcollins.com/#contact?submitted=true
+// and add this check:
+const urlParams = new URLSearchParams(window.location.search);
+if (urlParams.get('submitted') === 'true') {
+    if (ghlFormWrapper) ghlFormWrapper.style.display = 'none';
+    if (successMessage) {
+        successMessage.style.display = 'block';
+        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+}
