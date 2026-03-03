@@ -1151,11 +1151,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script>
-// Handle GHL form submission via postMessage
 const successMessage = document.getElementById('form-success');
 const ghlFormWrapper = document.getElementById('ghl-form-wrapper');
+let successShown = false;
 
 function showSuccess() {
+    if (successShown) return;
+    successShown = true;
     if (ghlFormWrapper) ghlFormWrapper.style.display = 'none';
     if (successMessage) {
         successMessage.style.display = 'block';
@@ -1163,25 +1165,51 @@ function showSuccess() {
     }
 }
 
+// Method 1: postMessage from GHL iframe
 window.addEventListener('message', function(event) {
     if (!event.data) return;
     const data = typeof event.data === 'string' ? event.data : JSON.stringify(event.data);
-    // GHL fires various message types on submission
-    if (
-        data.includes('form_submitted') ||
-        data.includes('formSubmitted') ||
-        data.includes('Thank you') ||
-        data.includes('gtm.formSubmit')
-    ) {
+    if (data.includes('form_submitted') || data.includes('formSubmitted') || data.includes('submissionId')) {
         showSuccess();
     }
 });
 
-// Fallback: GHL custom event
-document.addEventListener('hl-form-submitted', showSuccess);
-
-// Most reliable fallback: redirect URL parameter
+// Method 2: URL parameter (set redirect in GHL to https://alloyfortcollins.com/#contact?submitted=true)
 const urlParams = new URLSearchParams(window.location.search);
 if (urlParams.get('submitted') === 'true') {
     showSuccess();
 }
+
+// Method 3: Watch iframe height — GHL's form_embed.js resizes the iframe dynamically.
+// After submission it collapses to show the thank-you message (much shorter height).
+window.addEventListener('load', function() {
+    const iframe = document.getElementById('inline-kBEzFw4ZlH7PJmHAClaa');
+    if (!iframe) return;
+
+    let formInteracted = false;
+    let prevHeight = 0;
+
+    // Only start watching height after user has clicked inside the iframe
+    window.addEventListener('blur', function() {
+        // When focus moves to iframe (user clicked in it), start monitoring
+        if (document.activeElement === iframe) {
+            formInteracted = true;
+        }
+    });
+
+    const heightCheck = setInterval(function() {
+        if (!formInteracted) return;
+        const h = iframe.offsetHeight;
+        if (prevHeight > 300 && h > 0 && h < prevHeight - 100) {
+            // Height dropped significantly — thank you message showing
+            clearInterval(heightCheck);
+            setTimeout(showSuccess, 800);
+        }
+        if (h > 0) prevHeight = h;
+    }, 400);
+
+    // Stop checking after 10 minutes
+    setTimeout(function() { clearInterval(heightCheck); }, 600000);
+});</script>
+</body>
+</html>
