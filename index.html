@@ -1173,6 +1173,10 @@ function showSuccess() {
         successMessage.style.display = 'block';
         successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
+    // Fire Google Ads lead form conversion
+    if (typeof gtag === 'function') {
+        gtag('event', 'conversion', {'send_to': 'AW-17673031764/VTtkCPXoOoEcENSglOtB'});
+    }
 }
 
 // Method 1: postMessage from GHL iframe — watching for ALLOY_FORM_SUCCESS signal
